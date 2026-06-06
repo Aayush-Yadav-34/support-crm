@@ -86,24 +86,24 @@ export default function DashboardStatsCards() {
   ];
 
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
       {cards.map((card) => (
         <div
           key={card.label}
-          className={`${card.color} border rounded-lg p-4 transition-all`}
+          className={`${card.color} border rounded-lg p-3 sm:p-4 transition-all`}
         >
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-medium uppercase tracking-wider opacity-80">
+            <span className="text-[10px] sm:text-xs font-medium uppercase tracking-wider opacity-80 truncate">
               {card.label}
             </span>
-            <div className={`${card.iconBg} p-1.5 rounded-md`}>
+            <div className={`${card.iconBg} p-1.5 rounded-md shrink-0`}>
               {card.icon}
             </div>
           </div>
           {loading ? (
             <div className="h-8 w-12 bg-current/10 rounded animate-pulse" />
           ) : (
-            <p className="text-2xl font-bold">{card.value}</p>
+            <p className="text-xl sm:text-2xl font-bold">{card.value}</p>
           )}
         </div>
       ))}

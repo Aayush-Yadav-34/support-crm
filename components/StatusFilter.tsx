@@ -25,7 +25,7 @@ export default function StatusFilter() {
   };
 
   return (
-    <div className="flex items-center gap-1 p-1 bg-gray-100 rounded-lg" role="tablist">
+    <div className="flex flex-wrap items-center gap-0.5 p-1 bg-gray-100 rounded-lg" role="tablist">
       {STATUSES.map((status) => {
         const isActive = currentStatus === status || (status === 'All' && !searchParams.get('status'));
         return (
@@ -34,7 +34,7 @@ export default function StatusFilter() {
             role="tab"
             aria-selected={isActive}
             onClick={() => handleStatusChange(status)}
-            className={`px-4 py-1.5 text-sm font-medium rounded-md transition-all ${
+            className={`px-2.5 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm font-medium rounded-md transition-all ${
               isActive
                 ? 'bg-white text-gray-900 shadow-sm'
                 : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
